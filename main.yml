@@ -1,0 +1,15 @@
+  - name: create host in satellite
+    foreman_host:
+      name: "{{ ov_profile }}"
+      hostgroup: FIXME
+      provision_method: build
+      managed: true
+      mac: "{{ server_profiles[0]['connections'][0]['mac'] }}"
+      organization: FIXME
+      location: GDG
+      build: true
+      foreman_host: "{{ foreman_host }}"
+      foreman_port: "{{ foreman_port }}"
+      foreman_user: "{{ foreman_user }}"
+      foreman_pass: "{{ foreman_pass }}"
+    delegate_to: localhost
